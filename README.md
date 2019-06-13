@@ -22,7 +22,8 @@
 
 **How to run?** 
 
-    python jShell.py IpAddress Port
+    rlwrap ./jsHELL.py IpAddress Port
     
+    Example: rlwrap ./jsHELL.py 127.0.0.1 8080
     
 **NOTE: It's just a small tool I developed in few hours while testing a mobile browser for UXSS vulnerability. Because even for little changes I had to open complete HTML page and modify the code which was time consuming.**
