@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from flask_socketio import SocketIO,emit
 from flask import Flask
 import sys
