@@ -1,5 +1,5 @@
 from flask_socketio import SocketIO,emit
-from flask import Flask, render_template, session,request,flash,redirect,url_for
+from flask import Flask
 import sys
 
 if len(sys.argv)<3:
@@ -34,7 +34,7 @@ html=html+'''
     catch{}
 
     socket.on('getMSG',function(data){
-        document.getElementById("history").innerHTML+="<br><font size=3 color=black> ["+data+"]</font>";
+        document.getElementById("history").innerHTML+="<br><font size=3 color=black> ["+data.replace(/</g,"")+"]</font>";
         try{
              output=eval(data)+""
         }
