@@ -1,4 +1,4 @@
-**TL;DR; : This tool allows you to execute javascript in mobile browser from terminal. Can be useful when testing mobile browsers for logical bugs.**
+**TL;DR; : This tool allows you to execute javascript in browsers from terminal. Can be useful when testing mobile browsers for logical bugs.**
 
 **jsHELL?**
     
