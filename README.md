@@ -1,9 +1,5 @@
 **TL;DR; : This tool allows you to send javascript code from terminal to your browser. Can be useful when testing mobile browsers for bugs.**
 
-**jsHELL?**
-    
-    Pronounced as JS HELL not J Shell.
-
 **WTF is this?**
 
     jsHELL tries to simulate javascript console for Mobile Browsers. Normally javascript consoles are available for Desktop browsers but not for Mobile browsers. jsHELL uses WebSocket to establish connection between the mobile browser and your Desktop terminal to send the javascript code and receive it's output.
