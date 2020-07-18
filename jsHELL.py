@@ -14,8 +14,8 @@ print "Listening on",HOST+":"+PORT
 
 app = Flask(__name__)
 app.secret_key='I Am Batman.'
-access_key="Tony Stark Is The Best."
-session_id="This guy fucks!"
+access_key="Tony Stark."
+session_id="You are best!"
 socketio = SocketIO(app)
 
 html='''
