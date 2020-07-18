@@ -6,7 +6,7 @@
 
 **Why we need something like that?**
     
-    We need this because mobile browsers doesn't provide any way to execute JS directly like Desktop browsers (via Developer Console). Also typing the javascript in mobile browser using the fucked up mobile keyboard is pain in ass and time consuming.
+    We need this because mobile browsers doesn't provide any way to execute JS directly like Desktop browsers (via Developer Console). 
 
 **Why would anyone need to executed JS in mobile browser like this?**
 
@@ -14,7 +14,7 @@
 
 **How it's different than existing ones?**
 
-    I couldn't really find any similar tool. The one I find uses "netcat" and some shit which isn't working in my Macbook for some unknown reasons so I developed this tool. jsHELL doesn't rely on any external tools, it uses WebSocket for communication with browser. Plus the the code of jsHELL is very simple and straighforward so anyone can modify it as per their needs.
+    I couldn't really find any similar tool. The one I find uses "netcat" and some shit which isn't working in my Macbook for some unknown reasons so I developed this tool. jsHELL doesn't rely on any external libraries or tools, it uses WebSocket for communication with browser. Plus the the code of jsHELL is very simple and straighforward so anyone can modify it as per their needs.
 
 **How to run?** 
 
