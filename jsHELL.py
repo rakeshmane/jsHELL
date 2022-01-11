@@ -4,6 +4,10 @@ from flask import Flask
 import sys
 import logging
 
+#Export DER cert and private key from Burp Suite.
+#openssl rsa -inform der -in burp-key.der -out key.pem
+#openssl x509 -inform der -in cacert.der -out certificate.pem
+
 log = logging.getLogger('werkzeug')
 log.setLevel(logging.ERROR)
 
@@ -20,7 +24,7 @@ app = Flask(__name__)
 app.secret_key='I Am Batman.'
 access_key="Tony Stark."
 session_id="You are best!"
-socketio = SocketIO(app)
+socketio = SocketIO(app,cors_allowed_origins='*')
 
 html='''
 <div id=history></div>
@@ -64,4 +68,5 @@ def sendMSG(message): #Get MSG from Client
         exit()
 
 if __name__ == '__main__':
-   socketio.run(app,host=HOST,port=int(PORT))
+   context = ('certificate.pem','key.pem')
+   socketio.run(app,host=HOST,port=int(PORT),ssl_context=context)
