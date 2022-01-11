@@ -1,16 +1,20 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 from flask_socketio import SocketIO,emit
 from flask import Flask
 import sys
+import logging
+
+log = logging.getLogger('werkzeug')
+log.setLevel(logging.ERROR)
 
 if len(sys.argv)<3:
-    print "Usage : python jShell.py IpAddress Port\nExample: python jsHell.py 192.168.0.1 8080"
+    print("Usage : python jShell.py IpAddress Port\nExample: python jsHell.py 192.168.0.1 8080")
     exit()
 
 PORT=sys.argv[2].strip()
 HOST=sys.argv[1].strip()
 
-print "Listening on",HOST+":"+PORT
+print("Listening on",HOST+":"+PORT)
 
 app = Flask(__name__)
 app.secret_key='I Am Batman.'
@@ -20,10 +24,10 @@ socketio = SocketIO(app)
 
 html='''
 <div id=history></div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+<script src="https://cdn.socket.io/4.4.1/socket.io.min.js"></script>
 
 <script>
-'''    
+'''
 html=html+"var socket = io.connect('http://{}:{}');".format(HOST,PORT)
 
 html=html+'''
@@ -54,11 +58,10 @@ def shell():
 @socketio.on('sendMSG')
 def sendMSG(message): #Get MSG from Client
     print("OUTPUT> "+str(message))
-    command=raw_input("CMD> ")
+    command=input("CMD> ")
     emit("getMSG",command+"\n")
     if command=="exit":
         exit()
 
 if __name__ == '__main__':
-   socketio.run(app,debug=True,host=HOST,port=int(PORT))
-
+   socketio.run(app,host=HOST,port=int(PORT))
