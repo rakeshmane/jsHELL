@@ -16,6 +16,8 @@
 
 [ Proxy > Options > Match and Replace ]
 
+\- To inject payload to pages.
+
 `Type`: `Response Body`
 
 `Match` : `</title>`
@@ -26,3 +28,11 @@
 ```
 
 Note - Change the IP address. If target page does not has </title> tag in response then modify it accordingly.
+
+\- To disable CSP so that our payload would execute.
+
+`Type`: `Response Header`
+
+`Match` : `Content-Security-Policy`
+
+`Replace` : `Content-Security-Policy-X`
